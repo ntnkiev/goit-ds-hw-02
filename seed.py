@@ -26,7 +26,7 @@ cur.execute("SELECT id FROM status")
 status_ids = cur.fetchall()
 
 for i in range(200):  # Заповнення завдань
-    title = fake.sentence(nb_words=6)
+    title = fake.sentence(nb_words=2)
     description = fake.text()
     status_id = random.choice(status_ids)[0]
     user_id = random.choice(users_ids)[0]
@@ -37,7 +37,3 @@ for i in range(200):  # Заповнення завдань
 conn.commit()
 cur.close()
 conn.close()
-
-
-
-
